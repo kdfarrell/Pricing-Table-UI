@@ -1,0 +1,257 @@
+:root {
+    --clr-primary: #121826;
+    --clr-secondary: #4D5562;
+
+    --clr-accent1: #263FA9;
+    --clr-accent2: #7C4F1E;
+
+    --clr-border: #4D556233;
+    --clr-bg: #FFFFFF;
+
+    --fw-bold: 700;
+    --fw-semibold: 600;
+    --fw-normal: 400;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul, li {
+    list-style: none;
+}
+
+button {
+    display: inline-block;
+    all: unset
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Be Vietnam Pro", sans-serif;
+    padding: 20px;
+    background: url(images/bg-pattern.png);
+    background-size: cover;
+}
+
+/* Header */
+header {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+    margin-bottom: 1rem;
+}
+
+header > p {
+    color: var(--clr-secondary);
+    font-weight: var(--fw-semibold);
+    margin-bottom: 4rem;
+}
+
+/* Main */
+
+main {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 175px 1fr 64px;
+}
+
+h3 {
+    font-size: 1rem;
+    color: var(--clr-accent1);
+    padding: 5px 10px;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+.price p {
+    color: var(--clr-secondary);
+    font-weight: var(--fw-normal);
+}
+
+.category {
+    grid-area: 2 / 1 / 3 / 2;
+    display: grid;
+    background-color: var(--clr-bg);
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.category ul {
+    min-width: 125px;
+}
+
+.category li {
+    padding: 1rem;
+    font-weight: var(--fw-bold);
+    border-bottom: 1px solid var(--clr-border);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.plans li {
+    padding: 1rem;
+    font-weight: var(--fw-normal);
+    border-bottom: 1px solid var(--clr-border);
+}
+
+.plans {
+    display: grid;
+    grid-template-rows: 175px 1fr 64px;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: var(--clr-bg);
+}
+
+.price {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    grid-gap: 5px;
+}
+
+.cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-accent1);
+    gap: .2rem;
+    cursor: pointer;
+    padding: 2rem;
+}
+
+.cta img {
+    width: 30px;
+}
+
+main > .plans:nth-child(4) {
+    background-color: var(--clr-primary);
+    border-radius: 1rem;
+}
+
+main > .plans:nth-child(4) h3 {
+    background-color: var(--clr-accent1);
+    border-radius: 100vw;
+    color: #F8FAFC;
+}
+
+main > .plans:nth-child(4) h2, 
+main > .plans:nth-child(4) p, 
+main > .plans:nth-child(4) li {
+    color: #F8FAFC;
+}
+
+main > .plans:nth-child(4) .cta {
+    color: #F8FAFC;
+    background-color: var(--clr-accent2);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+main > .plans:nth-child(2) {
+    grid-area: 1 / 2 / 4 / 3;
+}
+
+main > .plans:nth-child(3) {
+    grid-area: 1 / 3 / 4 / 4;
+}
+
+main > .plans:nth-child(4) {
+    grid-area: 1 / 4 / 4 / 5;
+}
+
+main > .plans:nth-child(5) {
+    grid-area: 1 / 5 / 4 / 6;
+}
+
+@media  (max-width: 1024px) {
+
+    main {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    main > .plans:nth-child(2) {
+        display: none;
+    }
+
+    main > .plans:nth-child(3) {
+        grid-area: 1 / 2 / 4 / 3;
+    }
+    
+    main > .plans:nth-child(4) {
+        grid-area: 1 / 3 / 4 / 4;
+    }
+    
+    main > .plans:nth-child(5) {
+        grid-area: 1 / 4 / 4 / 5;
+    }
+    
+}
+
+@media  (max-width: 768px) {
+
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    main > .plans:nth-child(3) {
+        display: none;
+    }
+    
+    main > .plans:nth-child(3) {
+        grid-area: 1 / 2 / 4 / 3;
+    }
+    
+    main > .plans:nth-child(4) {
+        grid-area: 1 / 2 / 4 / 3;
+    }
+    
+    main > .plans:nth-child(5) {
+        grid-area: 1 / 3 / 4 / 4;
+    }
+    
+}
+
+@media  (max-width: 550px) {
+
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main > .plans:nth-child(5) {
+        display: none;
+    }
+    
+    main > .plans:nth-child(4) {
+        grid-area: 1 / 2 / 4 / 3;
+    }
+    
+    main > .plans:nth-child(5) {
+        grid-area: 1 / 3 / 4 / 4;
+    }
+    
+}
+
+
+
