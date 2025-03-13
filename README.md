@@ -8,7 +8,7 @@ This project is a solution to the [Pricing Table Challenge](https://www.frontend
 
 ## Technologies Used  
 - HTML  
-- CSS (Flexbox/Grid)  
+- CSS
 
 ## How to Use  
 1. Clone the repository:  
